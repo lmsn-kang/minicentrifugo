@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package protocol;
+
+option go_package = "cen-demo/protocol";
+
+message ClientMessage {
+    oneof payload {
+        SubscribeRequest subscribe = 1;
+        PublishRequest publish = 2;
+    }
+}
+
+message SubscribeRequest {
+    string channel = 1;
+}
+
+message PublishRequest {
+    string channel = 1;
+    bytes data = 2;
+}
+
+message ServerMessage {
+    oneof payload {
+        PushMessage push = 1;
+        ReplyMessage reply = 2;
+    }
+}
+
+message PushMessage {
+    string channel = 1;
+    bytes data = 2;
+}
+
+message ReplyMessage {
+    string text = 1;
+}
