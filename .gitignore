@@ -1,0 +1,13 @@
+AGENTS.md
+INTERVIEW_PREP.md
+PROJECT_INTRODUCTION.md
+docker-compose.yaml
+
+.env
+.env.*
+*.log
+
+.gocache/
+bin/
+dist/
+coverage.out
